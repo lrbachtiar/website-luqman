@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Luqman Bachtiar</title>
+    <title>Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -69,76 +69,96 @@
         <!-- /.container -->
     </nav>
 
- <!-- Page Header -->
+   <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/about-bg.jpg')">
+    <header class="intro-header" style="background-image: url('img/blog-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="page-heading">
-                        <h2>Luqman Bachtiar</h2>
+                    <div class="site-heading">
+                        <h1>Blog</h1>
                         <hr class="small">
-                        <span class="subheading">Solution Engineer and Research Scientist</span>
+                        <span class="subheading">Every step leaves its print; work steadily and make solid progress.</span>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
+
     <!-- Main Content -->
     <div class="container">
         <div class="row">
-
-            <hr>
-            
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h3>About Me</h3>
-                <p>Hi, my name is Luqman and I love science!</p>
 
-                <p>I am a PhD candidate at The University of Auckland researching signal processing and computational learning techniques to analyse insect olfactory sensor responses to odours. By understanding how the fruit fly and mosquito responds to various odours and flavours, an algorithm that simulates their behaviour can be used in an olfactory biosensor. Such devices have a myriad of applications and I am particularly interested in detecting a fruit’s ripeness based on the odours it emits.</p>
+                <div class="post-preview">
+                    <a href="p1.html">
+                        <p class="post-meta">20/10/15 - Using an SD card to increase laptop storage</p>
+                    </a>
+                </div>
+                
+                <div class="post-preview">
+                    <a href="p2.html">
+                        <p class="post-meta">25/03/16 - Creating a static resume website</p>
+                    </a>
+                </div>
 
-                <p>As an active member of the Institute of Electrical and Electronics Engineers (IEEE), I currently serve as Secretary and Student Representative for the Engineering in Medicine and Biology Society’s (EMBS) New Zealand North Chapter.</p>
 
-                <p>Outside of my research endeavours, I am also an solution engineer for developer operations at Orion Health Ltd.</p>
 
-                <p>A detailed overview of my research interests, work experience and publications can be found in their respective pages. Please navigate to my contact page for any enquiries.</p>
+                <hr>
+<!--
+                <div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">
+                            I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.
+                        </h2>
+                    </a>
+                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 18, 2014</p>
+                </div>
+                <hr>
+                <div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">
+                            Science has not yet mastered prophecy
+                        </h2>
+                        <h3 class="post-subtitle">
+                            We predict too much for the next year and yet far too little for the next ten.
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</p>
+                </div>
+                <hr>
+                <div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">
+                            Failure is not an option
+                        </h2>
+                        <h3 class="post-subtitle">
+                            Many say exploration is part of our destiny, but it’s actually our duty to future generations.
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on July 8, 2014</p>
+                </div>
+                <hr>
+-->
+
+
+                <!-- Pager -->
+<!--
+                
+                <ul class="pager">
+                    <li class="next">
+                        <a href="#">Older Posts &rarr;</a>
+                    </li>
+                </ul>
+-->
 
             </div>
-
-            <form id="contactform" method="POST">
-                <div class="row control-group">
-                    <input type="hidden" class="form-control" name="Downloaded CV Triggered">
-                </div>
-                <input type="hidden" name="_next" value="contact.html" />
-                <br>
-                <div id="success"></div>
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="form-group col-xs-12">
-                        <button type="submit"><span class="fa fa-file-pdf-o"> </span> Click here to request resume </button>
-                    </div>
-                </div>
-            </form>
-            <script>
-                var contactform =  document.getElementById('contactform');
-                contactform.setAttribute('action', '//formspree.io/' + 'lrbachtiar' + '@' + 'gmail' + '.' + 'com');
-            </script>
-
- 
-
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h3>Research Interests</h3>
-                <p>My specialisation is in the field of signal processing. I have completed a Masters research project involving the design of a processing system for an artificial olfactory biosensor. MATLAB software was used to implement an Artificial Neural Network for the pattern recognition of the firing rates of fly and mosquito olfactory receptors in response to chemical odorants. Such a device can potentially be used in the food industry for the detection and distinction between ripe or rotten fruits.</p>
-
-                <p>My past experiences as a student research assistant have provided valuable opportunities for involvement with a number of research projects.</p>
-
-                <p><b>Interests:</b> Biosignal processing, artificial intelligence and machine learning, artificial and automated odour identificaiton, phoneme prediction, image processing.</p>
-
-            </div>
-
         </div>
     </div>
+    
 
-    <hr>
+
 
     <hr>
 
@@ -181,6 +201,7 @@
                                 </span>
                             </a>
                         </li>
+
                     </ul>
                     <p class="copyright text-muted">Copyright &copy; Luqman Bachtiar 2016</p>
                 </div>

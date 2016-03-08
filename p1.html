@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Luqman Bachtiar</title>
+    <title>20/10/15</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -69,76 +69,66 @@
         <!-- /.container -->
     </nav>
 
- <!-- Page Header -->
+   <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/about-bg.jpg')">
+    <header class="intro-header" style="background-image: url('img/blog-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="page-heading">
-                        <h2>Luqman Bachtiar</h2>
+                    <div class="site-heading">
+                        <h1>Blog</h1>
                         <hr class="small">
-                        <span class="subheading">Solution Engineer and Research Scientist</span>
+                        <span class="subheading">Every step leaves its print; work steadily and make solid progress.</span>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-
-    <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-
-            <hr>
-            
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h3>About Me</h3>
-                <p>Hi, my name is Luqman and I love science!</p>
-
-                <p>I am a PhD candidate at The University of Auckland researching signal processing and computational learning techniques to analyse insect olfactory sensor responses to odours. By understanding how the fruit fly and mosquito responds to various odours and flavours, an algorithm that simulates their behaviour can be used in an olfactory biosensor. Such devices have a myriad of applications and I am particularly interested in detecting a fruit’s ripeness based on the odours it emits.</p>
-
-                <p>As an active member of the Institute of Electrical and Electronics Engineers (IEEE), I currently serve as Secretary and Student Representative for the Engineering in Medicine and Biology Society’s (EMBS) New Zealand North Chapter.</p>
-
-                <p>Outside of my research endeavours, I am also an solution engineer for developer operations at Orion Health Ltd.</p>
-
-                <p>A detailed overview of my research interests, work experience and publications can be found in their respective pages. Please navigate to my contact page for any enquiries.</p>
-
-            </div>
-
-            <form id="contactform" method="POST">
-                <div class="row control-group">
-                    <input type="hidden" class="form-control" name="Downloaded CV Triggered">
-                </div>
-                <input type="hidden" name="_next" value="contact.html" />
-                <br>
-                <div id="success"></div>
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="form-group col-xs-12">
-                        <button type="submit"><span class="fa fa-file-pdf-o"> </span> Click here to request resume </button>
-                    </div>
+
+                    <h2 class="section-heading">Using an SD card to increase laptop storage</h2>
+
+                    <p>So a local electronic store was having quite a sale and I stumbled upon a pretty good deal for the SanDisk Ultra Mini Drive 64GB. However, after playing around with it while migrating my data, I’ve encountered an issue that affects the battery life of the MacBook. The issue is a failure of the MacBook entering a deep sleep due to the mounted SD card. Details of this issue can be found here: https://support.apple.com/en-nz/HT202124</p>
+
+                    <p>[To enter standby] Notebooks need to be running on battery power. It also must not have any external connections (such as Ethernet, USB, Thunderbolt, SD card, displays, Bluetooth, and so on).
+A simple workaround would be to use the app Mountain. This $5 app allows you to unmount and remount a drive that’s already plugged in!
+                    </p>
+
+                    <p>However, I was curious to see if I could create my own free workaround.
+                    </p>
+
+                    <h4>Terminal commands</h4>
+                    <p>
+                    <xmp>$ diskutil list | grep "Drive Name" 
+$ diskutil unmount "Drive Name"
+$ diskutil mount "Drive Name"
+                    </xmp>
+                </p>
+
+                <h4>Creating the Automator Application</h4>
+
+                    <p>OS X has a cool tool called Automator for performing actions. Once you have identified your “Drive Name”, all you need is to create separate applications for unmounting and remounting your drive. This allows you to unmount/remount the SD card without removing and re-entering it.
+                    </p>
+
+                    <h4>Conclusion</h4>
+                    <p>To overcome MacBook battery draining issues due to failure of entering a deep sleep due to mounted drives, insert some basic terminal commands into an Automator application to create a tool for unmounting and remounting an external drive.
+                    </p>
+
+                    <h4>[Update 27/10/15]</h4>
+
+                    <p>
+                    To facilitate the ease of unmounting and remounting the SD card, a shortcut in the menu bar can be used. This workaround relies on using the Apple Script Editor application as we will be using it to store the shortcuts. Move the previously created Automator applications into the Apple Script Editor directory. Open the preferences for Apple Script Editor to view scripts in menu bar.
+                    You should now be able to view the Automator application in the menu bar under the Apple Script Editor icon.
+                </p>
+
                 </div>
-            </form>
-            <script>
-                var contactform =  document.getElementById('contactform');
-                contactform.setAttribute('action', '//formspree.io/' + 'lrbachtiar' + '@' + 'gmail' + '.' + 'com');
-            </script>
-
- 
-
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h3>Research Interests</h3>
-                <p>My specialisation is in the field of signal processing. I have completed a Masters research project involving the design of a processing system for an artificial olfactory biosensor. MATLAB software was used to implement an Artificial Neural Network for the pattern recognition of the firing rates of fly and mosquito olfactory receptors in response to chemical odorants. Such a device can potentially be used in the food industry for the detection and distinction between ripe or rotten fruits.</p>
-
-                <p>My past experiences as a student research assistant have provided valuable opportunities for involvement with a number of research projects.</p>
-
-                <p><b>Interests:</b> Biosignal processing, artificial intelligence and machine learning, artificial and automated odour identificaiton, phoneme prediction, image processing.</p>
-
             </div>
-
         </div>
-    </div>
-
-    <hr>
+    </article>
 
     <hr>
 
@@ -181,6 +171,7 @@
                                 </span>
                             </a>
                         </li>
+
                     </ul>
                     <p class="copyright text-muted">Copyright &copy; Luqman Bachtiar 2016</p>
                 </div>

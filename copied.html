@@ -1,0 +1,124 @@
+Things you need
+Raspberry Pi (RPi)
+SD card, preferably a minimum of 8GB
+Ethernet cable with an active internet connection
+Monitor and HDMI connecting cable
+USB Keyboard
+Preparing the SD card
+Download the SD Formatter tool to completely wipe the card clean. Apply the Overwrite Format, not the Quick Format.
+
+Installing the OS
+Download the NOOBS OS: https://www.raspberrypi.org/downloads/noobs/
+Extract the file and copy all the contents into the SD card.
+Eject the SD card and insert into RPi.
+Plug in the power cable to the RPi.
+Connect the USB keyboard and HDMI cable to the RPi.
+Select Raspbian and click i to install it.
+Basic setup of the RPi is done.
+
+To safely turn off the RPi, run ‘sudo shutdown -h now’.
+
+SSH into the Raspberry Pi
+Connect the ethernet cable to the RPi.
+On your machine, open up terminal and run the ‘$ arp -a’
+Find the IP address of the RPi, it should look like this: raspberrypi (192.168.x.x) at xx:xx:xx:xx:xx:xx on en0 ifscope [ethernet]
+SSH into the RPi: $ ssh pi@192.168.x.x
+Backup your RPi SD card OS
+Safely shutdown the RPi and remove SD card.
+Insert SD card into your machine.
+Find the disk used by the sd card, run: $ diskutil list
+Create backup file: $ sudo dd bs=1m if=/dev/rdiskN of=./SDbackupdate.dmg
+Note: Creating the .dmg image takes a long time and the dd backup process does not provide an output of the progress. Leave the process running until the command prompt shows up again.
+
+Restoring your RPi SD card OS from .dmg
+Insert SD card into your machine.
+Find the disk used by the sd card, run: $ diskutil list
+Unmount the SD card: $ diskutil unmountDisk /dev/diskN
+Restore image onto SD card: $ sudo dd bs=1m if=./SDbackupdate.dmg of=/dev/rdiskN
+Eject SD card: $ sudo diskutil eject /dev/rdiskN
+
+
+So a local electronic store was having quite a sale and I stumbled upon a pretty good deal for the SanDisk Ultra Mini Drive 64GB. However, after playing around with it while migrating my data, I’ve encountered an issue that affects the battery life of the MacBook. The issue is a failure of the MacBook entering a deep sleep due to the mounted SD card. Details of this issue can be found here: https://support.apple.com/en-nz/HT202124
+
+[To enter standby] Notebooks need to be running on battery power. It also must not have any external connections (such as Ethernet, USB, Thunderbolt, SD card, displays, Bluetooth, and so on).
+A simple workaround would be to use the app Mountain. This $5 app allows you to unmount and remount a drive that’s already plugged in!
+
+However, I was curious to see if I could create my own free workaround.
+
+Terminal commands
+
+$ diskutil list | grep "Drive Name"
+$ diskutil unmount "Drive Name"
+$ diskutil mount "Drive Name"
+
+Creating the Automator Application
+
+OS X has a cool tool called Automator for performing actions. Once you have identified your “Drive Name”, all you need is to create separate applications for unmounting and remounting your drive. This allows you to unmount/remount the SD card without removing and re-entering it.
+
+AutomatorApplication
+Create an Automator Application
+
+Screen Shot 2015-10-21 at 10.39.03 PM
+Adding bash script to Automator application
+
+Screen Shot 2015-10-21 at 10.41.41 PM
+Tools to unmount and remount the SD card
+
+Conclusion
+
+To overcome MacBook battery draining issues due to failure of entering a deep sleep due to mounted drives, insert some basic terminal commands into an Automator application to create a tool for unmounting and remounting an external drive.
+
+[Update 27/10/15]
+
+To facilitate the ease of unmounting and remounting the SD card, a shortcut in the menu bar can be used:
+
+Unmount/Remount Menu Bar Shortcut
+Unmount/Remount menu bar shortcut
+
+This workaround relies on using the Apple Script Editor application as we will be using it to store the shortcuts. Move the previously created Automator applications into the folder below:
+
+Apple Script Editor directory
+Apple Script Editor directory
+
+Open the preferences for Apple Script Editor to view scripts in menu bar:
+
+Apple Script Editor preferences 
+Apple Script Editor preferences
+
+You should now be able to view the Automator application in the menu bar under the Apple Script Editor icon.
+
+
+This post will outline the steps I took to setup this personal website. Prior to this, I had no experience with creating a website so this post may only be useful for first-timers such as myself. I will include an overview of the tools I used and the associated costs. Here is a quick overview of the steps involved:
+
+Website domain name and hosting.
+Hosting platform.
+Themes and content creation.
+1. Website domain name and hosting.
+A website domain name refers to the IP resource and can be combined with a hostname to complete the URL. You can create a free website domain name which is hosted by an external provider to form a URL similar to: [yourname].hostingsite.com. However, if you prefer a more explicit domain name such as yourname.com, you will need to purchase this domain name to park or reserve it’s usage. You can purchase a desired domain name from any provider, the cheaper the better! The only caveat is if you would like to purchase the domain name and webhosting as a package.
+
+A web hosting service allows your website and it’s resources (images and videos) to be accessed by anyone through the internet. Accessing these resources requires bandwidth so these services are essentially providing leasing space on a server in a data centre and allocating a defined amount of data transfer from these servers to the access points (domain name). For the purposes of a personal website, a basic web hosting is sufficient.
+
+Reserving a domain name and using a web hosting service is an operating expense. The longer you choose to pay for these services, the cheaper they become, i.e. if you decide to pay for 5 years of service it will be much cheaper than paying for only 1 year. Word of caution, you may find that some web hosting service providers may be better than others, so it is usually better to purchase a short-term subscription to assess the stability of the service before committing to a long-term subscription.
+
+My domain name was purchased through dynadot and is hosted on bluehost. I chose bluehost because they provide an easy service for using the wordpress hosting platform.
+
+2. Hosting platform
+A website hosting platform can be considered the engine which runs the web site. Someone who is proficient with web development may create their own hosting platform. However, for the purposes of a simple personal website, using an available hosting platform service is recommended.
+
+This website uses the wordpress hosting platform. The main reason is that it is so widely used so if there are bugs or issues, the developers will provide a quick update release or other users may provide work-arounds.
+
+3. Themes and content creation
+This section will refer to themes and content creation using the wordpress hosting platform.
+
+You can purchase themes for your website from many different providers. For a personal website, I believe the key requirements a theme should cover are:
+
+Regular updates and releases from the developers of the theme.
+A large enough user base to cover unique issues or work-arounds.
+A straightforward usability of the theme.
+A theme related to your use.
+I chose the Faculty Theme that is tailored towards an academia resume personal website. It covers all the points above:
+
+I have received continuous support and fixes for reported bugs or issues.
+Most of the users have a similar style and purpose for the theme that I can utilise.
+The theme uses the Visual Composer plugin that provides powerful customisability whilst maintaining ease of use for someone not familiar with web-development.
+The Faculty Theme provides useful tools for an academia resume personal website.

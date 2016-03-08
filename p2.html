@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Luqman Bachtiar</title>
+    <title>25/03/16</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -69,76 +69,63 @@
         <!-- /.container -->
     </nav>
 
- <!-- Page Header -->
+   <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/about-bg.jpg')">
+    <header class="intro-header" style="background-image: url('img/blog-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="page-heading">
-                        <h2>Luqman Bachtiar</h2>
+                    <div class="site-heading">
+                        <h1>Blog</h1>
                         <hr class="small">
-                        <span class="subheading">Solution Engineer and Research Scientist</span>
+                        <span class="subheading">Every step leaves its print; work steadily and make solid progress.</span>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-
-    <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-
-            <hr>
-            
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h3>About Me</h3>
-                <p>Hi, my name is Luqman and I love science!</p>
-
-                <p>I am a PhD candidate at The University of Auckland researching signal processing and computational learning techniques to analyse insect olfactory sensor responses to odours. By understanding how the fruit fly and mosquito responds to various odours and flavours, an algorithm that simulates their behaviour can be used in an olfactory biosensor. Such devices have a myriad of applications and I am particularly interested in detecting a fruit’s ripeness based on the odours it emits.</p>
-
-                <p>As an active member of the Institute of Electrical and Electronics Engineers (IEEE), I currently serve as Secretary and Student Representative for the Engineering in Medicine and Biology Society’s (EMBS) New Zealand North Chapter.</p>
-
-                <p>Outside of my research endeavours, I am also an solution engineer for developer operations at Orion Health Ltd.</p>
-
-                <p>A detailed overview of my research interests, work experience and publications can be found in their respective pages. Please navigate to my contact page for any enquiries.</p>
-
-            </div>
-
-            <form id="contactform" method="POST">
-                <div class="row control-group">
-                    <input type="hidden" class="form-control" name="Downloaded CV Triggered">
-                </div>
-                <input type="hidden" name="_next" value="contact.html" />
-                <br>
-                <div id="success"></div>
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="form-group col-xs-12">
-                        <button type="submit"><span class="fa fa-file-pdf-o"> </span> Click here to request resume </button>
-                    </div>
+
+                    <h2 class="section-heading">Creating a static resume website</h2>
+
+                    <p>Around middle of 2015 I setup a personal website using wordpress hosting. Just last month I received an email reminder to renew these hosting services. During the first year of service, bluehost provided a special offer of USD$3.49/month wordpress hosting. However, since I am entering the second year of hosting, these costs would increase to the normal minimum rate of $7.99/month. For me personally, this website isn't anything too important and definitely not worth the annual $100 cost. So I had a look around the interwebs and found something interesting! It turns out github allows you to create basic static pages for free: <a href="https://pages.github.com/">link.</a> Github provides a basic overview of how to use this feature, so in this post I'll just outline the additional things I found when setting things up.</p>
+
+                    <p>Things you need:
+                        <ol type="1">
+                          <li>Knowledge of <a href="https://en.wikipedia.org/wiki/Git_(software)">Git</a> and a Github account</li>                          
+                          <li>Basic HTML knowledge and a HTML website template.</li>
+                          <li>Purchased domain name.</li>
+                        </ol>
+                    </p>
+
+                    <h3>Using Github</h3>
+                    <p>To host a static for free on github, you <b>must</b> at least know some basic usage of git. Git is a code  management system and for our purposes, it is used to upload the html contents of the website into the github repository.
+                    </p>
+
+                    <h3>HTML website template</h3>
+                    <p>I have little to-no experience with HTML so I'm completely fine using templates. To be honest, using templates is a great way to understand the mechanics of HTML and how different elements are used. I initially started with the skeleton template (<a href="http://getskeleton.com/">link</a>).
+                    </p>
+
+                    <p>In addition to my inexperience with HTML, I'm also horrible at design. I started with the skeleton template and <i>tried</i> to at least make a decent looking website but failed miserably. I found something called bootstrap (<a href="http://getbootstrap.com/">link</a>), some kind of HTML framework that's quite popular, which means many pre-made <b>free</b> templates to choose from. Great example of a website made with bootstrap: <a href="http://adventurega.me/bootstrap/"><b>Seriously, Open This Page, It's Awesome</b></a>
+                    </p>
+
+                    <h3>Using your purchased domain name</h3>
+                    <p>Once you have completed your website locally and committed it into your gh-pages branch, you can now link a purchased domain name to it. The original address of my website is actually: http://lrbachtiar.github.io/website-luqman. I've linked my domain name luqmanbachtiar.com by adding a CNAME file into the gh-pages branch. You will then need to use your DNS manager to the CNAME records to the github ip address (<a href="http://stackoverflow.com/questions/9082499/custom-domain-for-github-project-pages"><a>link</a>).
+                    </p>
+
+                    <hr>
+
+                    <p>That's all there is to it folks :)
+                    </p>
+
                 </div>
-            </form>
-            <script>
-                var contactform =  document.getElementById('contactform');
-                contactform.setAttribute('action', '//formspree.io/' + 'lrbachtiar' + '@' + 'gmail' + '.' + 'com');
-            </script>
-
- 
-
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h3>Research Interests</h3>
-                <p>My specialisation is in the field of signal processing. I have completed a Masters research project involving the design of a processing system for an artificial olfactory biosensor. MATLAB software was used to implement an Artificial Neural Network for the pattern recognition of the firing rates of fly and mosquito olfactory receptors in response to chemical odorants. Such a device can potentially be used in the food industry for the detection and distinction between ripe or rotten fruits.</p>
-
-                <p>My past experiences as a student research assistant have provided valuable opportunities for involvement with a number of research projects.</p>
-
-                <p><b>Interests:</b> Biosignal processing, artificial intelligence and machine learning, artificial and automated odour identificaiton, phoneme prediction, image processing.</p>
-
             </div>
-
         </div>
-    </div>
-
-    <hr>
+    </article>
 
     <hr>
 
@@ -181,6 +168,7 @@
                                 </span>
                             </a>
                         </li>
+
                     </ul>
                     <p class="copyright text-muted">Copyright &copy; Luqman Bachtiar 2016</p>
                 </div>
